@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Nokora:wght@300;400;700;900&display=swap');
+
+:root{
+    --negro: #1B2430;
+    --violeta-oscuro: #51557E;
+    --violeta: #816797; 
+    --blanco: #D6D5A8; 
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Nokora', sans-serif;
+    min-height: 100vh;
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+
+.title{
+    background-color: var(--violeta);
+    padding: 20px 0;
+    text-align: center;
+    font-weight: 900;
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+
+
+.options{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 60px;
+    margin-bottom: 50px;
+}
+
+.options span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--violeta-oscuro);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: solid 5px var(--blanco);
+    transition: background-color 200ms ease-in-out,
+    color 200ms ease-in-out,
+    transform 25ms ease-in-out;
+}
+
+.options span:hover{
+    background-color: var(--blanco);
+    border-color: var(--violeta-oscuro);
+}
+
+.options span:hover:active{
+    transform: scale(0.9);
+}
+
+.scores{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.you,
+.computer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#your-score, #computer-score{
+    display: inline-block;
+}
+
+.your-choice,
+.computer-choice{
+    color: black;
+    width: 150px;
+    height: 150px;
+    background-color: var(--blanco);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+}
+
+.draw{
+    text-align: center;
+    display: none;
+}
+
+.draw.show{
+    display: block;
+}
+
+.scored{
+    transform: scale(1);
+    animation-name: scored;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+    animation-duration: 1s;
+}
+
+@keyframes scored {
+    0%{
+        transform: scale(1);
+        color: var(--blanco);
+    }
+    50%{
+        transform: scale(1.7);
+        color: white;
+    }
+    100%{
+        transform: scale(1);
+        color: var(--blanco);
+    }
+}
+
+@media (max-width: 400px){
+
+    .title{
+        padding: 30px 0;
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+
+    .options{
+        font-size: 40px;
+        /* margin-bottom: 50px; */
+    }
+    
+    .options span{
+        width: 80px;
+        height: 80px;
+        border: solid 5px var(--blanco);
+    }
+
+    .you,
+    .computer{
+        width: 50%;
+        gap: 15px;
+    }
+
+    #your-score, #computer-score{
+    display: block;
+    text-align: center;
+    }
+
+    .your-choice,
+    .computer-choice{
+    width: 100px;
+    height: 100px;
+    font-size: 65px;
+    }
+
+    .scores{
+        /* justify-content: space-evenly; */
+        gap: 0px;
+        font-size: 20px;
+    }
+
+}
