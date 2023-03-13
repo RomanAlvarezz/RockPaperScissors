@@ -1,4 +1,4 @@
-# Conversor de Moneda
+# Juego de Piedra Papel o Tijeras
 
 ![Pagina](./Rock-Paper-Scissor-screen.png)
 
